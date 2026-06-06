@@ -3,6 +3,7 @@ export interface Income {
   customer: string;
   amount: number;
   month: string;
+  user_id: string;
   created_at: string;
 }
 
@@ -12,6 +13,7 @@ export interface Expense {
   amount: number;
   month: string;
   expense_date: string;
+  user_id: string;
   created_at: string;
 }
 

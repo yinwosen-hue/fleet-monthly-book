@@ -34,7 +34,7 @@ export function useDashboard() {
 
   // Mutations: Add income
   const addIncomeMutation = useMutation({
-    mutationFn: (income: Omit<Income, "id" | "created_at">) =>
+    mutationFn: (income: Omit<Income, "id" | "created_at" | "user_id">) =>
       addIncome(income),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["incomes"] });
@@ -59,7 +59,7 @@ export function useDashboard() {
 
   // Mutations: Add expense
   const addExpenseMutation = useMutation({
-    mutationFn: (expense: Omit<Expense, "id" | "created_at">) =>
+    mutationFn: (expense: Omit<Expense, "id" | "created_at" | "user_id">) =>
       addExpense(expense),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["expenses"] });

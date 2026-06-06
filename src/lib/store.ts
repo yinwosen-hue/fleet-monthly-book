@@ -21,8 +21,8 @@ export async function fetchIncomes(month?: string) {
 }
 
 export async function addIncome(
-  income: Omit<Income, "id" | "created_at">
-): Promise<Income> {
+  income: Omit<Income, "id" | "created_at" | "user_id">
+): Promise<Income | null> {
   const { data, error } = await supabase
     .from("incomes")
     .insert({
@@ -77,8 +77,8 @@ export async function fetchExpenses(month?: string) {
 }
 
 export async function addExpense(
-  expense: Omit<Expense, "id" | "created_at">
-): Promise<Expense> {
+  expense: Omit<Expense, "id" | "created_at" | "user_id">
+): Promise<Expense | null> {
   const { data, error } = await supabase
     .from("expenses")
     .insert({
